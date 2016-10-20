@@ -8,8 +8,22 @@ namespace MorseCodeApp
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main()
         {
+            while (true)
+            {
+                Console.Write(": ");
+                string input = Console.ReadLine();
+
+                if(string.IsNullOrWhiteSpace(input))
+                {
+                    break;
+                }
+
+                string output = MorseCodeTranslator.ToMorse(input);
+
+                Console.WriteLine(output);
+            }
         }
     }
 }
